@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hack/ReusableItems/reusablecard.dart';
 import 'package:hack/ReusableItems/reusabledoctors.dart';
+import 'package:hack/pages/abortion.dart';
 import 'package:hack/pages/information.dart';
+import 'package:hack/pages/planning.dart';
 import 'package:hack/pages/telemedicine.dart';
 
 import 'hiv.dart';
@@ -121,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                     title: "Abortion",
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Hiv()));
+                          MaterialPageRoute(builder: (context) => Abortion()));
                     },
                   ),
                   ReusableAllAlbumsCard(
@@ -129,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                     title: "Cotraception",
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Hiv()));
+                          MaterialPageRoute(builder: (context) => Planning()));
                     },
                   )
                 ],
@@ -172,6 +174,39 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   ReusableDoctor(imgpath: "drmelat.jpg", title: "Dr Melat"),
                   ReusableDoctor(imgpath: "drbrhan.jpg", title: "Dr Berhan")
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 10, right: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Ads',
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 17, 158, 128),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ReusableAllAlbumsCard(
+                      imgpath: "condom.jpg", title: "XYZ condom", onTap: () {}),
+                  ReusableAllAlbumsCard(
+                    imgpath: "eve.jpg",
+                    title: "Eve Sanitary Napkin",
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Planning()));
+                    },
+                  )
                 ],
               ),
             ),

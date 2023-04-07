@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
 import '../ReusableItems/Reusablebutton.dart';
 
@@ -34,12 +35,19 @@ class _ProfessionalDetailPageState extends State<ProfessionalDetailPage> {
             child: Container(
                 margin: const EdgeInsets.fromLTRB(0, 30, 0, 0),
                 child: ReusableElevatedButton(
-                    buttonText: const Text(
-                      'Call Now',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
-                    ),
-                    onPressed: () async {})),
-            onPressed: () {},
+                  onPressed: (() async {
+                    const number = '9898'; //set the number here
+                    await FlutterPhoneDirectCaller.callNumber(number);
+                  }),
+                  buttonText: const Text(
+                    'Call Now',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                )),
+            onPressed: () async {
+              const number = '08592119XXXX'; //set the number here
+              bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+            },
           ),
         ),
         appBar: AppBar(
